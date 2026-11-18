@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>SNES Emulator</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='0' fill='%234a90e2'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://cdn.emulatorjs.org" crossorigin />
+  <link rel="preconnect" href="https://thumbnails.libretro.com" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="library" hidden>
+    <div class="toolbar">
+      <select id="group" aria-label="Group games">
+        <option value="snes">SNES</option>
+        <option value="letter">Letter</option>
+        <option value="genre">Genre</option>
+        <option value="developer">Developer</option>
+        <option value="publisher">Publisher</option>
+        <option value="year">Year</option>
+        <option value="players">Players</option>
+        <option value="series">Series</option>
+      </select>
+      <input id="search" type="search" placeholder="Search games" aria-label="Search games" autocomplete="off" />
+    </div>
+    <div id="groups"></div>
+  </main>
+  <section id="player" hidden>
+    <div class="hud">
+      <button id="back" class="chip" type="button" aria-label="Back to games">&larr; Games</button>
+      <button id="filter" class="chip" type="button" aria-pressed="false">Super Eagle</button>
+      <button id="crt" class="chip" type="button" aria-pressed="true">CRT</button>
+      <select id="variant" class="chip" aria-label="Version" hidden></select>
+    </div>
+    <div class="game-name" id="game-name"></div>
+    <div id="game"></div>
+    <div id="crt-lines"></div>
+    <div id="pad" hidden>
+      <div class="pad-shoulders">
+        <button class="pad-btn shoulder" data-btn="l" type="button">L</button>
+        <button class="pad-btn shoulder" data-btn="r" type="button">R</button>
+      </div>
+      <div class="dpad">
+        <button class="pad-btn up" data-btn="up" type="button" aria-label="Up"></button>
+        <button class="pad-btn left" data-btn="left" type="button" aria-label="Left"></button>
+        <button class="pad-btn right" data-btn="right" type="button" aria-label="Right"></button>
+        <button class="pad-btn down" data-btn="down" type="button" aria-label="Down"></button>
+      </div>
+      <div class="sys">
+        <button class="pad-btn bar" data-btn="select" type="button">Select</button>
+        <button class="pad-btn bar" data-btn="start" type="button">Start</button>
+      </div>
+      <div class="face">
+        <button class="pad-btn round x" data-btn="x" type="button">X</button>
+        <button class="pad-btn round y" data-btn="y" type="button">Y</button>
+        <button class="pad-btn round a" data-btn="a" type="button">A</button>
+        <button class="pad-btn round b" data-btn="b" type="button">B</button>
+      </div>
+    </div>
+  </section>
+  <script src="games.js"></script>
+  <script src="meta.js"></script>
+  <script src="covers.js"></script>
+  <script src="variants.js"></script>
+  <script src="audio.js"></script>
+  <script src="filter.js"></script>
+  <script src="controls.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
